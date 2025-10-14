@@ -35,8 +35,13 @@
 
         &:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
             background-color: #ffffff11;
+        }
+
+        &:active {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
         }
     }
 }
