@@ -4,17 +4,16 @@
 /*导入全局样式*/
 @import url(global.css);
 
-/* nav目录 */
-@keyframes fade-in-up {
-    from {
+.fade-in-entry {
+    transition: all 1s;
+    transform: translateY(0px);
+    opacity: 1;
+
+    @starting-style {
         transform: translateY(48px);
         opacity: 0;
     }
 
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
 }
 
 .nav {
@@ -30,20 +29,19 @@
     padding-right: 10rem;
     font-size: 1.8rem;
     line-height: 1.8;
-    animation: fade-in-up 1s ease;
-
-    & > ul {
+    
+    &>ul {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 3rem;
 
-        & > li {
-            & > a{
+        &>li {
+            &>a {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-            
+
                 &:link,
                 &:visited {
                     color: var(--pink);
@@ -55,13 +53,13 @@
                     color: var(--blue);
                 }
             }
-            
-            &:first-child > a {
+
+            &:first-child>a {
                 color: var(--blue);
-            } 
-            
+            }
+
         }
-        
+
     }
 }
 
@@ -92,7 +90,6 @@ main {
 .main-content {
     margin: auto;
     text-align: center;
-    animation: fade-in-up 1s ease;
 }
 
 .main-content h1 {

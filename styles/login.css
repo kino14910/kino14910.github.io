@@ -11,7 +11,7 @@
     background-color: var(--bg);
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2rem rgb(0 0 0 / 0.2);
 }
 
 .left {
@@ -53,7 +53,7 @@
 
 .account:focus {
     border-color: var(--blue);
-    box-shadow: 0 0 0 0.2rem rgba(179, 234, 255, 0.3);
+    box-shadow: 0 0 0 0.2rem rgb(179 234 255 / 0.3);
 }
 
 .submit {

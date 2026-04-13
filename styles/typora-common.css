@@ -267,13 +267,13 @@ li p.first { display: inline-block; }
 ul, ol { padding-left: 30px; }
 ul:first-child, ol:first-child { margin-top: 0; }
 ul:last-child, ol:last-child { margin-bottom: 0; }
-blockquote { border-left: 4px solid #dfe2e5; padding: 0 15px; color: #777777; }
+blockquote { border-left: 4px solid #3D4552; padding: 0 15px; color: #777777; }
 blockquote blockquote { padding-right: 0; }
 table { padding: 0; word-break: initial; }
-table tr { border: 1px solid #dfe2e5; margin: 0; padding: 0; }
-table tr:nth-child(2n), thead { background-color: #f8f8f8; }
-table th { font-weight: bold; border: 1px solid #dfe2e5; border-bottom: 0; margin: 0; padding: 6px 13px; }
-table td { border: 1px solid #dfe2e5; margin: 0; padding: 6px 13px; }
+table tr { border: 1px solid #3D4552; margin: 0; padding: 0; }
+table tr:nth-child(2n), thead { background-color: hsl(214, 35%, 20%); }
+table th { font-weight: bold; border: 1px solid #3D4552; border-bottom: 0; margin: 0; padding: 6px 13px; }
+table td { border: 1px solid #3D4552; margin: 0; padding: 6px 13px; }
 table th:first-child, table td:first-child { margin-top: 0; }
 table th:last-child, table td:last-child { margin-bottom: 0;  }
 .CodeMirror-lines { padding-left: 4px;  }

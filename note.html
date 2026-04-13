@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles/note.css" />
-        <link rel="stylesheet" href="symbols/font.css">
 
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/note.css" />
+    <link rel="stylesheet" href="symbols/font.css">
 
-    <body>
-        <header>
-            <div class="header">
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="blog.html">博客</a></li>
-                    <li><a href="server.html">服务器</a></li>
-                    <li><a href="note.html" class="active">笔记</a></li>
-                    <li><a href="login.html">登录</a></li>
-                </ul>
-            </div>
-            <div class="header-change">
-                <span class="material-symbols-rounded">menu</span>
-            </div>
-        </header>
-        <div class="container">
-            <h1>Some Personal Note</h1>
-            <div class="grid">
-                <a href="note/Java.html">Java</a>
-                <a href="note/HTML.html">HTML</a>
-                <a href="note/JavaScript.html">JavaScript</a>
-                <a href="note/JQuery.html">JQuery</a>
-                <a href="note/Svelte.html">Svelte</a>
-                <a href="note/MySQL.html">MySQL</a>
-                <a href="note/RegExp.html">正则表达式</a>
-                <a href="note/network.html">网络工程</a>
-                <a href="note/Vue.html">Vue</a>
-                <a href="note/gradient.html">渐变色</a>
-                <div class="separator"><p>⬇⬇⬇ 以下为编程无关 ⬇⬇⬇</p></div>
-                <a href="note/DNS.html">DNS</a>
-                <a href="note/gal-pw.html">galgame解压码</a>
-                <a href="note/Terraria.html">Terraria</a>
-                <a href="note/Phasmophobia.html">恐鬼症全鬼魂特性</a>
-                <a href="note/bf1-gun-suffix.html">战地1枪械后缀</a>
-                <a href="note/TCL-hack.html">TCL</a>
-            </div>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="server.html">服务器</a></li>
+                <li><a href="note.html" class="active">笔记</a></li>
+                <li><a href="login.html">登录</a></li>
+            </ul>
         </div>
-        <script>
-            document.querySelectorAll(".grid > a").forEach((btn) => {
-                btn.addEventListener("mousedown", function (e) {
-                    const ripple = document.createElement("span");
-                    ripple.className = "ripple";
-                    const rect = btn.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    ripple.style.width = ripple.style.height = size + "px";
-                    ripple.style.left = e.clientX - rect.left - size / 2 + "px";
-                    ripple.style.top = e.clientY - rect.top - size / 2 + "px";
-                    btn.appendChild(ripple);
-                    ripple.addEventListener("animationend", () =>
-                        ripple.remove()
-                    );
-                });
-            });
-        </script>
-    </body>
+        <div class="header-change">
+            <span class="material-symbols-rounded">menu</span>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Some Personal Note</h1>
+        <div class="grid">
+            <a href="note/Java.html">Java</a>
+            <a href="note/HTML.html">HTML</a>
+            <a href="note/JavaScript.html">JavaScript</a>
+            <a href="note/JQuery.html">JQuery</a>
+            <a href="note/Svelte.html">Svelte</a>
+            <a href="note/MySQL.html">MySQL</a>
+            <a href="note/RegExp.html">正则表达式</a>
+            <a href="note/network.html">网络工程</a>
+            <a href="note/Vue.html">Vue</a>
+            <a href="note/gradient.html">渐变色</a>
+            <div class="separator">
+                <p>⬇⬇⬇ 以下为编程无关 ⬇⬇⬇</p>
+            </div>
+            <a href="note/DNS.html">DNS</a>
+            <a href="note/gal-pw.html">galgame解压码</a>
+            <a href="note/Terraria.html">Terraria</a>
+            <a href="note/Phasmophobia.html">恐鬼症全鬼魂特性</a>
+            <a href="note/bf1-gun-suffix.html">战地1枪械后缀</a>
+            <a href="note/TCL-hack.html">TCL</a>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll(".grid > a").forEach((btn) => {
+            btn.addEventListener("mousedown", function (e) {
+                const ripple = document.createElement("span");
+                ripple.className = "ripple";
+                const rect = btn.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + "px";
+                ripple.style.left = e.clientX - rect.left - size / 2 + "px";
+                ripple.style.top = e.clientY - rect.top - size / 2 + "px";
+                btn.appendChild(ripple);
+                ripple.addEventListener("animationend", () =>
+                    ripple.remove()
+                )
+            })
+        })
+    </script>
+</body>
+
 </html>
