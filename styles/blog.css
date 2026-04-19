@@ -33,10 +33,10 @@ main {
 article {
     margin: 2vw;
     background-color: #141520ed;
-    border-radius: 1vmin;
-    border-interaction-bar: #333 3px double;
+    border-radius: 2rem;
+    border: #333 3px double;
     backdrop-filter: blur(5px);
-    padding: 3vmin;
+    padding: 1.5vw;
     display: grid;
     grid-template:
         "head name" 2vmax
@@ -47,11 +47,22 @@ article {
     grid-gap: 0 1vmin;
     /* transition: transform, box-shadow 0.5s; */
 
-    &>.avatar>img {
+    &>.avatar {
         display: block;
-        height: 4vmax;
-        width: 4vmax;
+        height: 3.5vmax;
+        width: 3.5vmax;
         grid-area: head;
+        border-radius: 50%;
+        overflow: hidden;
+        justify-self: center;
+        align-self: center;
+
+        &>img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     &:hover {
@@ -63,7 +74,15 @@ article {
         grid-area: time;
         color: gray;
         font-size: 1.4rem;
-        align-self: stretch;
+        display: flex;
+        align-items: center;
+    }
+
+    & .nickname {
+        grid-area: name;
+        align-self: end;
+        display: flex;
+        align-items: end;
     }
 
     & .interaction-bar {
@@ -126,14 +145,4 @@ article {
             margin-top: 2vh;
         }
     }
-
-    & .nickname {
-        grid-area: name;
-        align-self: stretch;
-    }
-}
-
-.grid-center {
-    justify-content: center;
-    align-items: center;
 }

@@ -5,28 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人博客页面，分享生活与感悟">
     <link rel="stylesheet" href="styles/blog.css">
-    <script defer src="scripts/header.js"></script>
+    <script defer src="scripts/site-header.js"></script>
     <title>博客</title>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="blog.html" class="active">博客</a></li>
-                <li><a href="server.html">服务器</a></li>
-                <li><a href="note.html">笔记</a></li>
-                <li><a href="login.html">登录</a></li>
-            </ul>
-        </div>
-    </header>
+    <site-header active="blog" variant="default"></site-header>
     <div class="container">
         <main>
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Elysia.png" alt="" width="64px" height="64px">
+                    <img src="images/Elysia.png" alt="粉色妖精小姐♪的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">粉色妖精小姐♪</div>
                 <time class="date">2023-3-30</time>
@@ -40,14 +31,17 @@
                     <li><a><span class="commenter">伊甸-offical</span></a>：爱莉什么时候都很好看</li>
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Griseo.png" alt="" width="64px" height="64px">
+                    <img src="images/Griseo.png" alt="格蕾修的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">格蕾修</div>
                 <time class="date">2023-2-14</time>
@@ -61,14 +55,17 @@
                     <li><a><span class="commenter">科斯魔</span></a>：算了...</li>
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Kevin.png" alt="" width="64px" height="64px">
+                    <img src="images/Kevin.png" alt="逐火之蛾-凯文的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">逐火之蛾-凯文</div>
                 <time class="date">2023-1-28</time>
@@ -79,22 +76,28 @@
                 </div>
                 <ul class="comment">
                     <li><a><span class="commenter">粉色妖精小姐♪</span></a>：要是没有崩坏该多好呀~</li>
-                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span class="mention">粉色妖精小姐♪</span></a>：逐火之蛾正是因此而存在</li>
+                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span
+                                class="mention">粉色妖精小姐♪</span></a>：逐火之蛾正是因此而存在</li>
                     <li><a><span class="commenter">喵喵喵</span></a>：凯文老大，不会又是吃泡面吧？</li>
-                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<span class="mention">喵喵喵</span></a>：可以加一条鱼干</li>
-                    <li><a><span class="commenter">喵喵喵</span></a>回复<a><span class="mention">逐火之蛾-凯文</span></a>：谢谢凯文老大！！！凯文老大最好了！</li>
+                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span class="mention">喵喵喵</span></a>：可以加一条鱼干
+                    </li>
+                    <li><a><span class="commenter">喵喵喵</span></a>回复<a><span
+                                class="mention">逐火之蛾-凯文</span></a>：谢谢凯文老大！！！凯文老大最好了！</li>
                     <li><a><span class="commenter">mei</span></a>：注意休息</li>
                     <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span class="mention">mei</span></a>：好的</li>
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Eden.png" alt="" width="64px" height="64px">
+                    <img src="images/Eden.png" alt="伊甸-offical的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">伊甸-offical</div>
                 <time class="date">2022-12-25</time>
@@ -106,18 +109,22 @@
                 <ul class="comment">
                     <li><a><span class="commenter">粉色妖精小姐♪</span></a>：加油呀！我的好伊甸~</li>
                     <li><a><span class="commenter">苏</span></a>：太难抢了，花了三倍价格才抢到票</li>
-                    <li><a><span class="commenter">凯文</span></a>回复<a><span class="mention">苏</span></a>：看来梅比乌斯的脚本没有梅的快</li>
-                    <li><a><span class="commenter">Mobius</span></a>回复<a><span class="mention">凯文</span></a>：不用就闭嘴
+                    <li><a><span class="commenter">凯文</span></a>回复<a><span class="mention">苏</span></a>：看来梅比乌斯的脚本没有梅的快
+                    </li>
+                    <li><a><span class="commenter">Mobius</span></a>回复<a><span class="mention">凯文</span></a>：不用就闭嘴</li>
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Mobius.png" alt="" width="64px" height="64px">
+                    <img src="images/Mobius.png" alt="Mobius的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">Mobius</div>
                 <time class="date">2022-9-26</time>
@@ -127,21 +134,26 @@
                     </p>
                 </div>
                 <ul class="comment">
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>：恭喜我们的Mobius博士实验成功~</li>
-                    <li><a><span class="commenter">Mobius</span></a>回复<a><span class="mention">粉色妖精小姐♪</span></a>： 爱莉希雅！你是不是又在我衣柜里面放了你的衣服！</li>
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>回复<a><span class="mention">Mobius</span></a>： 穿一次好不好嘛~那可是人家的心意呀~</li>
+                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>：恭喜我们的梅比乌斯博士实验成功~</li>
+                    <li><a><span class="commenter">Mobius</span></a>回复<a><span class="mention">粉色妖精小姐♪</span></a>：
+                        爱莉希雅！你是不是又在我衣柜里面放了你的衣服！</li>
+                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>回复<a><span class="mention">Mobius</span></a>：
+                        穿一次好不好嘛~那可是人家的心意呀~</li>
                     <li><a><span class="commenter">Mei</span></a>：所以最后还是根据我的推论进行修正的吗？</li>
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
 
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Elysia.png" alt="" width="64px" height="64px">
+                    <img src="images/Elysia.png" alt="粉色妖精小姐♪的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">粉色妖精小姐♪</div>
                 <time class="date">2022-08-18</time>
@@ -155,15 +167,18 @@
                 <ul class="comment">
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
 
             <article class="grid-center">
                 <div class="avatar">
-                    <img src="images/Elysia.png" alt="" width="64px" height="64px">
+                    <img src="images/Elysia.png" alt="粉色妖精小姐♪的头像" width="64" height="64" loading="lazy">
                 </div>
                 <div class="nickname">粉色妖精小姐♪</div>
                 <time class="date">2021-09-16</time>
@@ -173,13 +188,14 @@
                     </p>
                     <iframe src="//player.bilibili.com/player.html?aid=547989472&bvid=BV1dq4y1N7ry&cid=427292435&page=1"
                         scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"
-                        height="400px">
+                        height="400">
                     </iframe>
                 </div>
                 <ul class="comment">
                     <li><a><span class="commenter">伊甸</span></a>：不错，我的好爱莉。</li>
-                    <li><a><span class="commenter">Mobius</span></a>：也不过如此，果然还是想听你劫哥唱歌</li>
-                    <li><a><span class="commenter">你劫哥</span></a>回复<a><span class="mention">Mobius</span></a>：梅比乌斯！你还想再死一次！</li>
+                    <li><a><span class="commenter">Mobius</span></a>：也不过如此，果然还是想听千劫唱歌</li>
+                    <li><a><span class="commenter">你劫哥</span></a>回复<a><span
+                                class="mention">Mobius</span></a>：梅比乌斯！你还想再死一次！</li>
                     <li><a><span class="commenter">阿波尼亚</span></a>回复<a><span class="mention">你劫哥</span></a>：请 好好说话</li>
                     <li><a><span class="commenter">喵喵喵</span></a>：爱莉姐太厉害了！！！</li>
                     <li><a><span class="commenter">科斯魔</span></a>：帅</li>
@@ -188,15 +204,20 @@
                     <li><a><span class="commenter">华</span></a>：清耳悦心</li>
                     <li><a><span class="commenter">世界第一魔术师</span></a>：就让这首歌作为最伟大魔术师的伴奏吧！</li>
                     <li><a><span class="commenter">樱</span></a>：是很好听的歌，很有个人特色</li>
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>回复<a><span class="mention">樱</span></a>：哎呀！樱原来也很喜欢这样的风格吗~</li>
-                    <li><a><span class="commenter">樱</span></a>回复<a><span class="mention">回粉色妖精小姐♪</span></a>：嗯？</li>
+                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>回复<a><span
+                                class="mention">樱</span></a>：哎呀！樱原来也很喜欢这样的风格吗~</li>
+                    <li><a><span class="commenter">樱</span></a>回复<a><span class="mention">粉色妖精小姐♪</span></a>：嗯？</li>
                     <li><a><span class="commenter">苏</span></a>：如同花间的精灵在耳边呢喃，清净了许久，偶尔这样也不错。</li>
-                    <li><a><span class="commenter">你劫哥</span></a>回复<a><span class="mention">阿波尼亚</span></a>：********************</li>
+                    <li><a><span class="commenter">你劫哥</span></a>回复<a><span
+                                class="mention">阿波尼亚</span></a>：********************</li>
                 </ul>
                 <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction"><span class="material-symbols-rounded">ios_share</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
+                                class="material-symbols-rounded">favorite</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
+                                class="material-symbols-rounded">comment</span></a></div>
+                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
+                                class="material-symbols-rounded">ios_share</span></a></div>
                 </div>
             </article>
         </main>

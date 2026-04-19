@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>kino的网站</title>
-        <link rel="stylesheet" href="./styles/index.css" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Montserrat"
-            rel="stylesheet"
-        />
-        <script defer src="scripts/scripts.js"></script>
-    </head>
 
-    <body>
-        <header>
-            <nav class="nav fade-in-entry">
-                <ul>
-                    <li><a href="index.html" class="active">首页</a></li>
-                    <li><a href="blog.html">博客</a></li>
-                    <li><a href="server.html">服务器</a></li>
-                    <li><a href="note.html">笔记</a></li>
-                    <li>
-                        <a href="porgram.html">项目
-                            <span class="material-symbols-rounded">arrow_drop_down</span>
-                        </a>
-                    </li>
-                    <!-- <li><a href="login.html">登录</a></li> -->
-                </ul>
-            </nav>
-            <div class="nav-change">
-                <span class="symbols">&#xe5d2;</span>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kino的网站</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="index-header">
+        <nav class="index-nav">
+            <ul>
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="server.html">服务器</a></li>
+                <li><a href="note.html">笔记</a></li>
+                <li><a href="login.html">登录</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="菜单">
+            <span class="material-symbols-rounded">menu</span>
+        </button>
+    </header>
+    <div class="container">
+        <main>
+            <div class="main-content center fade-in-entry">
+                <h1>Kino &amp; Elysia</h1>
+                <p>Folkroll</p>
             </div>
-        </header>
-        <div class="container">
-            <main>
-                <div class="main-content center fade-in-entry">
-                    <h1>Kino &amp; Elysia</h1>
-                    <p>Folkroll</p>
-                </div>
-            </main>
-        </div>
-    </body>
+        </main>
+    </div>
+    <script>
+        (function () {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var nav = document.querySelector('.index-nav');
+            var icon = menuToggle.querySelector('.material-symbols-rounded');
+            var navOpen = false;
+
+            menuToggle.addEventListener('click', function () {
+                navOpen = !navOpen;
+                nav.classList.toggle('open', navOpen);
+                icon.textContent = navOpen ? 'close' : 'menu';
+            });
+        })();
+    </script>
+</body>
+
 </html>

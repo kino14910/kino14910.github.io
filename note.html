@@ -7,25 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/note.css" />
     <link rel="stylesheet" href="symbols/font.css">
+    <script defer src="scripts/site-header.js"></script>
 
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="blog.html">博客</a></li>
-                <li><a href="server.html">服务器</a></li>
-                <li><a href="note.html" class="active">笔记</a></li>
-                <li><a href="login.html">登录</a></li>
-            </ul>
-        </div>
-        <div class="header-change">
-            <span class="material-symbols-rounded">menu</span>
-        </div>
-    </header>
+    <site-header active="note" variant="default"></site-header>
     <div class="container">
         <h1>Some Personal Note</h1>
         <div class="grid">

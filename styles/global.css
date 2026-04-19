@@ -9,15 +9,6 @@
   --link-hover: #66b8ff;
 }
 
-/* 外部字体 */
-.symbols {
-  font-family: "Material Symbols Outlined";
-  font-size: 2.4rem;
-  color: white;
-  font-size: xx-large;
-  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
-}
-
 /* 全局样式 */
 * {
   margin: 0;
@@ -29,6 +20,15 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   color-scheme: dark;
+}
+
+/* 外部字体 */
+.symbols {
+  font-family: "Material Symbols Outlined";
+  font-size: 2.4rem;
+  color: white;
+  font-size: xx-large;
+  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
 }
 
 @media screen and (max-width: 56.25em) {
@@ -68,4 +68,9 @@ ul {
 input {
   background-color: transparent;
   outline: none;
+}
+
+site-header:not(:defined) {
+  display: block;
+  min-height: 8rem;
 }

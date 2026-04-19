@@ -5,39 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="用户登录页面">
     <link rel="stylesheet" href="styles/login.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <title>登录界面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0"
+        rel="stylesheet">
+    <script defer src="scripts/site-header.js"></script>
+    <title>登录</title>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="blog.html">博客</a></li>
-                <li><a href="server.html">服务器</a></li>
-                <li><a href="note.html">笔记</a></li>
-                <li><a href="login.html" class="active">登录</a></li>
-            </ul>
-        </div>
-        <div class="header-change"><a><span class="symbols">&#xe5d2;</span></a></div>
-    </header>
-    <div class="box flex-center">
-        <div class="left"></div>
-        <div class="right">
-            <h4>登 录</h4>
-            <form action="" method="post">
-                <input class="account" type="text" placeholder="用户名">
-                <input class="account" type="password" placeholder="密码">
-                <input class="submit" type="submit" value="Login">
-            </form>
-            <div class="fn">
-                <a href="javascript:;">注册账号</a>
-                <a href="javascript:;">找回密码</a>
+    <site-header active="login" variant="default"></site-header>
+    <main class="login-surface">
+        <div class="login-card">
+            <div class="login-hero">
+                <div class="login-hero-content">
+                    <span class="material-symbols-rounded login-icon">lock</span>
+                    <h1 class="login-title">欢迎回来</h1>
+                    <p class="login-subtitle">登录以继续</p>
+                </div>
+            </div>
+            <div class="login-form-area">
+                <form action="" method="post" class="login-form">
+                    <div class="md3-text-field">
+                        <input class="md3-text-field__input" type="text" id="username" required placeholder=" ">
+                        <label class="md3-text-field__label" for="username">用户名</label>
+                    </div>
+                    <div class="md3-text-field">
+                        <input class="md3-text-field__input" type="password" id="password" required placeholder=" ">
+                        <label class="md3-text-field__label" for="password">密码</label>
+                    </div>
+                    <button class="md3-filled-button" type="submit">登录</button>
+                </form>
+                <div class="login-actions">
+                    <a href="javascript:;" class="md3-text-button">注册账号</a>
+                    <a href="javascript:;" class="md3-text-button">找回密码</a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 
 </html>

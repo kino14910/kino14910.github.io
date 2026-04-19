@@ -1,82 +1,162 @@
-/* 导入字体图标 */
 @import url(../symbols/outlined/index.css);
 @import url(../symbols/font.css);
-/*导入全局样式*/
 @import url(global.css);
 
-.fade-in-entry {
-    transition: all 1s;
-    transform: translateY(0px);
-    opacity: 1;
-
-    @starting-style {
-        transform: translateY(48px);
-        opacity: 0;
-    }
-
-}
-
-.nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    height: 10rem;
+/* ===== Index Header ===== */
+.index-header {
     width: 100%;
     position: fixed;
     top: 0;
-    right: 0;
+    z-index: 100;
+}
+
+.index-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10rem;
+    width: 100%;
     background-color: transparent;
     padding-right: 10rem;
     font-size: 1.8rem;
     line-height: 1.8;
-    
-    &>ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
+    animation: fadeInEntry 1s ease forwards;
+}
 
-        &>li {
-            &>a {
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
+.index-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+}
 
-                &:link,
-                &:visited {
-                    color: var(--pink);
-                    padding: 1rem;
-                }
+.index-nav a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink, #ffd9e6);
+    padding: 1rem;
+    transition: color 0.3s;
+    text-decoration: none;
+}
 
-                &:hover,
-                &:active {
-                    color: var(--blue);
-                }
-            }
+.index-nav a:hover,
+.index-nav a:active {
+    color: var(--blue, #b3eaff);
+}
 
-            &:first-child>a {
-                color: var(--blue);
-            }
+.index-nav li:first-child a {
+    color: var(--blue, #b3eaff);
+}
 
-        }
+.index-nav a.active {
+    color: var(--blue, #b3eaff);
+}
 
+@keyframes fadeInEntry {
+    from {
+        transform: translateY(48px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-.nav-change {
+.index-header .menu-toggle {
     display: none;
-    position: sticky;
     background-color: transparent;
-    transition: background-color 0.5s ease-in-out;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
 }
 
-.symbols {
+.index-header .menu-toggle .material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
     color: white;
-    font-size: large;
     font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
 }
 
-/* main样式 */
+/* ===== Mobile responsive ===== */
+@media screen and (max-width: 56.25em) {
+    .index-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 6rem;
+        padding: 0 2rem;
+        z-index: 1001;
+    }
+
+    .index-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(20, 21, 32, 0.97);
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        animation: none;
+    }
+
+    .index-nav.open {
+        display: flex;
+        animation: menuFadeIn 0.3s ease forwards;
+    }
+
+    .index-nav ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .index-nav a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 2.4rem;
+    }
+
+    .index-header .menu-toggle {
+        display: block;
+    }
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== Page Content ===== */
+.fade-in-entry {
+    transition: all 1s;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
 main {
     display: flex;
     height: 100vh;

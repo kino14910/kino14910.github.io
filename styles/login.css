@@ -1,107 +1,281 @@
 @import url(global.css);
 @import url(common.css);
 
-/* 登录框整体样式 */
-.box {
+.login-surface {
     display: flex;
-    min-height: 50rem;
-    width: 100%;
-    max-width: 80rem;
-    margin: 5rem auto;
-    background-color: var(--bg);
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 0 2rem rgb(0 0 0 / 0.2);
-}
-
-.left {
-    flex: 1;
-    background: url("../images/login.png") center/cover no-repeat;
-    position: relative;
-}
-
-.right {
-    flex: 1;
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 8rem);
+    padding: 2.4rem;
+    background-color: #141218;
 }
 
-.right h4 {
-    color: var(--pink2);
-    font-size: 3.2rem;
-    margin-bottom: 3rem;
+.login-surface * {
+    user-select: none;
+}
+
+.login-card {
+    display: flex;
+    width: 100%;
+    max-width: 90rem;
+    min-height: 50rem;
+    border-radius: 28px;
+    overflow: hidden;
+    background-color: #1d1b20;
+}
+
+.login-hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6f57ab;
+    padding: 4.8rem;
+}
+
+.login-hero-content {
     text-align: center;
 }
 
-.right form {
+.login-icon {
+    font-size: 6.4rem;
+    color: #eaddff;
+    margin-bottom: 2.4rem;
+    display: block;
+}
+
+.login-title {
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 4rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #eaddff;
+    margin-bottom: 0.8rem;
+}
+
+.login-subtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #eaddff;
+    opacity: 0.8;
+}
+
+.login-form-area {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: center;
+    padding: 4.8rem;
+    background-color: #1d1b20;
 }
 
-.account {
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.md3-text-field {
+    position: relative;
+}
+
+.md3-text-field__input {
     width: 100%;
-    padding: 1.5rem;
-    border: 1px solid var(--pink);
-    border-radius: 0.5rem;
-    color: white;
-    font-size: 1.6rem;
-    transition: all 0.3s;
-}
-
-.account:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 0 0.2rem rgb(179 234 255 / 0.3);
-}
-
-.submit {
-    background-color: var(--pink);
-    color: var(--bg);
+    padding: 2.4rem 1.6rem 0.8rem;
     border: none;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    border-bottom: 1px solid #cac4d0;
+    border-radius: 4px 4px 0 0;
+    background-color: #36343b;
+    color: #e6e0e9;
     font-size: 1.6rem;
-    font-weight: bold;
+    line-height: 2.4rem;
+    outline: none;
+    caret-color: #d0bcff;
+    transition: border-bottom-color 0.2s, background-color 0.2s;
+}
+
+.md3-text-field__input:hover {
+    border-bottom-color: #e6e0e9;
+    background-color: #3d3b42;
+}
+
+.md3-text-field__input:focus {
+    border-bottom-color: #d0bcff;
+    border-bottom-width: 2px;
+}
+
+.md3-text-field__label {
+    position: absolute;
+    left: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #cac4d0;
+    pointer-events: none;
+    transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.md3-text-field__input:focus+.md3-text-field__label,
+.md3-text-field__input:not(:placeholder-shown)+.md3-text-field__label {
+    top: 0rem;
+    /* transform: translateY(0); */
+    font-size: 1.4rem;
+    color: #d0bcff;
+    ;
+}
+
+.md3-text-field__input:not(:focus):not(:placeholder-shown)+.md3-text-field__label {
+    color: #cac4d0;
+}
+
+.md3-filled-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.4rem;
+    border: none;
+    border-radius: 9999px;
+    background-color: #d0bcff;
+    color: #381e72;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.1px;
     cursor: pointer;
-    transition: all 0.3s;
+    min-height: 4rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.submit:hover {
-    background-color: var(--pink2);
-    transform: translateY(-0.2rem);
+.md3-filled-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #381e72;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
 }
 
-/* 功能链接样式 */
-.fn {
+.md3-filled-button:hover::before {
+    opacity: 0.08;
+}
+
+.md3-filled-button:focus-visible {
+    outline: 2px solid #381e72;
+    outline-offset: 2px;
+}
+
+.md3-filled-button:active::before {
+    opacity: 0.12;
+}
+
+.md3-text-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    border: none;
+    border-radius: 9999px;
+    background-color: transparent;
+    color: #d0bcff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.1px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 4rem;
+    transition: background-color 0.2s;
+}
+
+.md3-text-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #d0bcff;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.md3-text-button:hover::before {
+    opacity: 0.08;
+}
+
+.md3-text-button:focus-visible {
+    outline: 2px solid #d0bcff;
+    outline-offset: 2px;
+}
+
+.md3-text-button:active::before {
+    opacity: 0.12;
+}
+
+.login-actions {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: 2.4rem;
 }
 
-.fn a {
-    color: var(--blue);
-    font-size: 1.4rem;
-    transition: all 0.3s;
-}
-
-.fn a:hover {
-    color: var(--pink);
-}
-
-/* 响应式设计 */
 @media screen and (max-width: 56.25em) {
-    .box {
+    .login-surface {
+        min-height: auto;
+        padding: 2rem;
+    }
+
+    .login-card {
         flex-direction: column;
-        height: auto;
+        min-height: auto;
     }
 
-    .left {
-        height: 30rem;
+    .login-hero {
+        padding: 3.2rem 2.4rem;
     }
 
-    .right {
-        padding: 4rem 2rem;
+    .login-icon {
+        font-size: 4.8rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .login-title {
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+    }
+
+    .login-form-area {
+        padding: 3.2rem 2.4rem;
+    }
+}
+
+@media screen and (max-width: 30em) {
+    .login-surface {
+        padding: 0;
+    }
+
+    .login-card {
+        border-radius: 0;
+    }
+
+    .login-hero {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .login-form-area {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .login-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
     }
 }

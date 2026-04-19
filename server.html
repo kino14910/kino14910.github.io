@@ -1,59 +1,39 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>服务器列表</title>
-        <link rel="stylesheet" href="styles/global.css" />
-        <link rel="stylesheet" href="styles/common.css" />
-        <link rel="stylesheet" href="styles/server.css" />
-        <script defer src="scripts/server.js"></script>
-        <script defer src="scripts/header.js"></script>
-        <script defer src="scripts/jquery-3.7.0.slim.min.js"></script>
-    </head>
 
-    <body>
-        <header>
-            <div class="header">
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="blog.html">博客</a></li>
-                    <li><a href="server.html" class="active">服务器</a></li>
-                    <li><a href="note.html">笔记</a></li>
-                    <li><a href="login.html">登录</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="游戏服务器列表，包含Minecraft、Terraria等游戏服务器" />
+    <title>服务器列表</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/server.css" />
+    <script defer src="scripts/site-header.js"></script>
+</head>
+
+<body>
+    <site-header active="server" variant="default"></site-header>
+    <main class="section-server">
+        <nav class="center">
+            <div id="minecraft">
+                <img src="images/minecraft.svg" alt="Minecraft" loading="lazy" />
             </div>
-            <div class="header-change">
-                <a href="#"><span class="symbols">&#xe5d2;</span></a>
+            <div id="terraria">
+                <img src="images/terraria.png" alt="Terraria" height="20%" loading="lazy" />
             </div>
-        </header>
-        <main class="section-server">
-            <nav class="center">
-                <div
-                    id="minecraft"
-                >
-                    <img src="images/minecraft.svg" alt="" />
-                </div>
-                <div
-                    id="terraria"
-                >
-                    <img src="images/terraria.png" alt="" height="20%" />
-                </div>
-                <div id="pz">
-                    <img src="images/pz.ico" alt="" />
-                </div>
-                <div id="sdtd">
-                    <img src="images/sdtd.ico" alt="暂未开放" />
-                </div>
-                <div id="stardew">
-                    <img
-                        src="images/stardew.ico"
-                        alt="暂未开放"
-                        height="80px"
-                    />
-                </div>
-            </nav>
-        </main>
-    </body>
+            <div id="pz">
+                <img src="images/pz.ico" alt="Project Zomboid" loading="lazy" />
+            </div>
+            <div id="sdtd">
+                <img src="images/sdtd.ico" alt="暂未开放: 7 Days to Die" loading="lazy" />
+            </div>
+            <div id="stardew">
+                <img src="images/stardew.ico" alt="暂未开放: Stardew Valley" height="80px" loading="lazy" />
+            </div>
+        </nav>
+    </main>
+</body>
+
 </html>
