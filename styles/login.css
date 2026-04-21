@@ -226,7 +226,7 @@
     margin-top: 2.4rem;
 }
 
-@media screen and (max-width: 56.25em) {
+@media (width <= 56.25em) {
     .login-surface {
         min-height: auto;
         padding: 2rem;
@@ -256,7 +256,7 @@
     }
 }
 
-@media screen and (max-width: 30em) {
+@media (width <= 30em) {
     .login-surface {
         padding: 0;
     }

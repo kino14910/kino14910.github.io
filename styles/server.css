@@ -5,17 +5,37 @@
 @import url(global.css);
 @import url(common.css);
 
-
 /*中间大导航栏*/
 nav {
     width: 1000px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
 
-@media screen and (min-width: 56.25em) {
-    nav {
+    div {
+        color: #fff;
+        height: 300px;
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: ease all 0.2s;
+
+        &:hover {
+            transform: scale(1.05) translateY(-0.5rem);
+            /* box-shadow: 0 0 20px #33333399; */
+        }
+    }
+
+    img {
+        width: auto;
+    }
+
+    >* {
+        background-color: #141520ed;
+    }
+
+    @media (width >= 56.25em) {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -23,50 +43,31 @@ nav {
     }
 }
 
-nav div {
-    color: #fff;
-    height: 300px;
-    width: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: ease all 0.2s;
-}
-
-nav div:hover {
-    transform: scale(1.05) translateY(-0.5rem);
-    /* box-shadow: 0 0 20px #33333399; */
-}
-
-nav img {
-    width: auto;
-}
-
-@media screen and (max-width: 56.25em) {
+@media (width <= 56.25em) {
     .container {
         padding: 15vh 0;
         height: auto;
     }
 
-    nav div {
-        margin: 1vh;
-        height: 150px;
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-    }
-
     nav {
         width: 100%;
         flex-direction: column;
-    }
 
-    #minecraft img {
-        transform: scale(0.8);
-    }
+        div {
+            margin: 1vh;
+            height: 150px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
 
-    #terraria img {
-        transform: scale(2.75);
+        #minecraft img {
+            transform: scale(0.8);
+        }
+
+        #terraria img {
+            transform: scale(2.75);
+        }
     }
 }
 
@@ -80,9 +81,9 @@ nav #terraria {
 
 nav #pz {
   background-color: #01A6DE;
-} */
+}
 
-/* nav #sdtd {
+nav #sdtd {
   display: none;
   background-color: #015E91;
 }
@@ -91,7 +92,3 @@ nav #stardew {
   display: none;
   background-color: #1DC128;
 } */
-
-nav > * {
-    background-color: #141520ed;
-}

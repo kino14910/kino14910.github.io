@@ -233,7 +233,7 @@ class SiteHeader extends HTMLElement {
                 }
 
                 /* ===== Mobile responsive ===== */
-                @media screen and (max-width: 56.25em) {
+                @media (width <= 56.25em) {
                     :host([variant="default"]) header {
                         position: relative;
                     }

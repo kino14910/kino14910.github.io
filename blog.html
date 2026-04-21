@@ -8,6 +8,8 @@
     <meta name="description" content="个人博客页面，分享生活与感悟">
     <link rel="stylesheet" href="styles/blog.css">
     <script defer src="scripts/site-header.js"></script>
+    <script defer src="scripts/blog/comment.js"></script>
+    <script defer src="scripts/blog/interaction-bar.js"></script>
     <title>博客</title>
 </head>
 
@@ -26,18 +28,11 @@
                         哎呀~今天我也这么好看~
                     </p>
                 </div>
-                <ul class="comment">
-                    <li><a><span class="commenter">Mobius</span></a>：又在发这种东西了</li>
-                    <li><a><span class="commenter">伊甸-offical</span></a>：爱莉什么时候都很好看</li>
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
+                <div class="comment">
+                    <blog-comment commenter="Mobius">又在发这种东西了</blog-comment>
+                    <blog-comment commenter="伊甸-offical">爱莉什么时候都很好看</blog-comment>
                 </div>
+                <interaction-bar />
             </article>
             <article class="grid-center">
                 <div class="avatar">
@@ -50,18 +45,11 @@
                         科斯魔今天不在
                     </p>
                 </div>
-                <ul class="comment">
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>：哎呀~科斯魔好狠心呢~怎么舍得让小格蕾修一个人呢</li>
-                    <li><a><span class="commenter">科斯魔</span></a>：算了...</li>
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
+                <div class="comment">
+                    <blog-comment commenter="粉色妖精小姐♪">哎呀~科斯魔好狠心呢~怎么舍得让小格蕾修一个人呢</blog-comment>
+                    <blog-comment commenter="科斯魔">算了...</blog-comment>
                 </div>
+                <interaction-bar />
             </article>
             <article class="grid-center">
                 <div class="avatar">
@@ -74,26 +62,16 @@
                         第四次崩坏区域崩坏能已恢复正常，各位辛苦了，今晚团建。
                     </p>
                 </div>
-                <ul class="comment">
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>：要是没有崩坏该多好呀~</li>
-                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span
-                                class="mention">粉色妖精小姐♪</span></a>：逐火之蛾正是因此而存在</li>
-                    <li><a><span class="commenter">喵喵喵</span></a>：凯文老大，不会又是吃泡面吧？</li>
-                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span class="mention">喵喵喵</span></a>：可以加一条鱼干
-                    </li>
-                    <li><a><span class="commenter">喵喵喵</span></a>回复<a><span
-                                class="mention">逐火之蛾-凯文</span></a>：谢谢凯文老大！！！凯文老大最好了！</li>
-                    <li><a><span class="commenter">mei</span></a>：注意休息</li>
-                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>回复<a><span class="mention">mei</span></a>：好的</li>
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
+                <div class="comment">
+                    <blog-comment commenter="粉色妖精小姐♪">要是没有崩坏该多好呀~</blog-comment>
+                    <blog-comment commenter="逐火之蛾-凯文" mention="粉色妖精小姐♪">逐火之蛾正是因此而存在</blog-comment>
+                    <blog-comment commenter="喵喵喵">凯文老大，不会又是吃泡面吧？</blog-comment>
+                    <blog-comment commenter="逐火之蛾-凯文" mention="喵喵喵">可以加一条鱼干</blog-comment>
+                    <blog-comment commenter="喵喵喵" mention="逐火之蛾-凯文">谢谢凯文老大！！！凯文老大最好了！</blog-comment>
+                    <blog-comment commenter="mei">注意休息</blog-comment>
+                    <blog-comment commenter="逐火之蛾-凯文" mention="mei">好的</blog-comment>
                 </div>
+                <interaction-bar />
             </article>
             <article class="grid-center">
                 <div class="avatar">
@@ -106,21 +84,13 @@
                         今天的演唱会现场人也很多，但果然还是比之前少了
                     </p>
                 </div>
-                <ul class="comment">
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>：加油呀！我的好伊甸~</li>
-                    <li><a><span class="commenter">苏</span></a>：太难抢了，花了三倍价格才抢到票</li>
-                    <li><a><span class="commenter">凯文</span></a>回复<a><span class="mention">苏</span></a>：看来梅比乌斯的脚本没有梅的快
-                    </li>
-                    <li><a><span class="commenter">Mobius</span></a>回复<a><span class="mention">凯文</span></a>：不用就闭嘴</li>
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
+                <div class="comment">
+                    <blog-comment commenter="粉色妖精小姐♪">加油呀！我的好伊甸~</blog-comment>
+                    <blog-comment commenter="苏">太难抢了，花了三倍价格才抢到票</blog-comment>
+                    <blog-comment commenter="凯文" mention="苏">看来梅比乌斯的脚本没有梅的快</blog-comment>
+                    <blog-comment commenter="Mobius" mention="凯文">不用就闭嘴</blog-comment>
                 </div>
+                <interaction-bar />
             </article>
             <article class="grid-center">
                 <div class="avatar">
@@ -133,22 +103,13 @@
                         哎呀~实验成功了~
                     </p>
                 </div>
-                <ul class="comment">
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>：恭喜我们的梅比乌斯博士实验成功~</li>
-                    <li><a><span class="commenter">Mobius</span></a>回复<a><span class="mention">粉色妖精小姐♪</span></a>：
-                        爱莉希雅！你是不是又在我衣柜里面放了你的衣服！</li>
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>回复<a><span class="mention">Mobius</span></a>：
-                        穿一次好不好嘛~那可是人家的心意呀~</li>
-                    <li><a><span class="commenter">Mei</span></a>：所以最后还是根据我的推论进行修正的吗？</li>
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
+                <div class="comment">
+                    <blog-comment commenter="粉色妖精小姐♪">恭喜我们的梅比乌斯博士实验成功~</blog-comment>
+                    <blog-comment commenter="Mobius" mention="粉色妖精小姐♪">爱莉希雅！你是不是又在我衣柜里面放了你的衣服！</blog-comment>
+                    <blog-comment commenter="粉色妖精小姐♪" mention="Mobius">穿一次好不好嘛~那可是人家的心意呀~</blog-comment>
+                    <blog-comment commenter="Mei">所以最后还是根据我的推论进行修正的吗？</blog-comment>
                 </div>
+                <interaction-bar />
             </article>
 
             <article class="grid-center">
@@ -164,16 +125,8 @@
                     <iframe frameborder="no" marginwidth="0" marginheight="0" width=100% height=86
                         src="//music.163.com/outchain/player?type=2&id=1973314938&auto=0&height=66"></iframe>
                 </div>
-                <ul class="comment">
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
-                </div>
+                <div class="comment"></div>
+                <interaction-bar />
             </article>
 
             <article class="grid-center">
@@ -191,34 +144,24 @@
                         height="400">
                     </iframe>
                 </div>
-                <ul class="comment">
-                    <li><a><span class="commenter">伊甸</span></a>：不错，我的好爱莉。</li>
-                    <li><a><span class="commenter">Mobius</span></a>：也不过如此，果然还是想听千劫唱歌</li>
-                    <li><a><span class="commenter">你劫哥</span></a>回复<a><span
-                                class="mention">Mobius</span></a>：梅比乌斯！你还想再死一次！</li>
-                    <li><a><span class="commenter">阿波尼亚</span></a>回复<a><span class="mention">你劫哥</span></a>：请 好好说话</li>
-                    <li><a><span class="commenter">喵喵喵</span></a>：爱莉姐太厉害了！！！</li>
-                    <li><a><span class="commenter">科斯魔</span></a>：帅</li>
-                    <li><a><span class="commenter">逐火之蛾-凯文</span></a>：好听</li>
-                    <li><a><span class="commenter">格蕾修</span></a>：爱莉希雅姐姐的歌，好听</li>
-                    <li><a><span class="commenter">华</span></a>：清耳悦心</li>
-                    <li><a><span class="commenter">世界第一魔术师</span></a>：就让这首歌作为最伟大魔术师的伴奏吧！</li>
-                    <li><a><span class="commenter">樱</span></a>：是很好听的歌，很有个人特色</li>
-                    <li><a><span class="commenter">粉色妖精小姐♪</span></a>回复<a><span
-                                class="mention">樱</span></a>：哎呀！樱原来也很喜欢这样的风格吗~</li>
-                    <li><a><span class="commenter">樱</span></a>回复<a><span class="mention">粉色妖精小姐♪</span></a>：嗯？</li>
-                    <li><a><span class="commenter">苏</span></a>：如同花间的精灵在耳边呢喃，清净了许久，偶尔这样也不错。</li>
-                    <li><a><span class="commenter">你劫哥</span></a>回复<a><span
-                                class="mention">阿波尼亚</span></a>：********************</li>
-                </ul>
-                <div class="interaction-bar">
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="点赞"><span
-                                class="material-symbols-rounded">favorite</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="评论"><span
-                                class="material-symbols-rounded">comment</span></a></div>
-                    <div class="interaction-bar-item"><a class="interaction" aria-label="分享"><span
-                                class="material-symbols-rounded">ios_share</span></a></div>
+                <div class="comment">
+                    <blog-comment commenter="伊甸">不错，我的好爱莉。</blog-comment>
+                    <blog-comment commenter="Mobius">也不过如此，果然还是想听千劫唱歌</blog-comment>
+                    <blog-comment commenter="你劫哥" mention="Mobius">梅比乌斯！你还想再死一次！</blog-comment>
+                    <blog-comment commenter="阿波尼亚" mention="你劫哥">请 好好说话</blog-comment>
+                    <blog-comment commenter="喵喵喵">爱莉姐太厉害了！！！</blog-comment>
+                    <blog-comment commenter="科斯魔">帅</blog-comment>
+                    <blog-comment commenter="逐火之蛾-凯文">好听</blog-comment>
+                    <blog-comment commenter="格蕾修">爱莉希雅姐姐的歌，好听</blog-comment>
+                    <blog-comment commenter="华">清耳悦心</blog-comment>
+                    <blog-comment commenter="世界第一魔术师">就让这首歌作为最伟大魔术师的伴奏吧！</blog-comment>
+                    <blog-comment commenter="樱">是很好听的歌，很有个人特色</blog-comment>
+                    <blog-comment commenter="粉色妖精小姐♪" mention="樱">哎呀！樱原来也很喜欢这样的风格吗~</blog-comment>
+                    <blog-comment commenter="樱" mention="粉色妖精小姐♪">嗯？</blog-comment>
+                    <blog-comment commenter="苏">如同花间的精灵在耳边呢喃，清净了许久，偶尔这样也不错。</blog-comment>
+                    <blog-comment commenter="你劫哥" mention="阿波尼亚">********************</blog-comment>
                 </div>
+                <interaction-bar />
             </article>
         </main>
     </div>
