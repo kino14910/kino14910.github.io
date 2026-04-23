@@ -34,14 +34,14 @@ class Comment extends HTMLElement {
                 :host {
                     display: block;
                     line-height: 1.5;
-                    margin-left: 5px;
-                    padding: 2px 0;
+                    margin-left: 6px!important;
+                    padding: 2px 0!important;
                 }
 
                 :host([mention]) {
-                    padding-left: 1em;
+                    padding-left: 1em!important;
                     border-left: 2px solid #ffffff15;
-                    margin-left: 1em;
+                    // margin-left: 1em!important;
                 }
 
                 a {
@@ -53,7 +53,11 @@ class Comment extends HTMLElement {
                     display: inline-block;
                     color: var(--link-blue, #4a9eff);
                     cursor: pointer;
-                    margin-right: 5px;
+                    margin-right: 6px;
+                }   
+                    
+                :host(:not([mention])) .commenter {
+                    margin-right: 0;
                 }
 
                 .reply-text {
@@ -65,8 +69,8 @@ class Comment extends HTMLElement {
                     display: inline-block;
                     color: var(--link-blue, #4a9eff);
                     cursor: pointer;
-                    margin-left: 5px;
-                }
+                    margin-left: 6px;
+        }
 
                 .separator {
                     color: inherit;

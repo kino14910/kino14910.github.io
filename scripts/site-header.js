@@ -41,6 +41,16 @@ class SiteHeader extends HTMLElement {
       { href: 'login.html', label: '登录', id: 'login' },
     ]
 
+    const menuList = `<ul>
+                    ${navItems
+                      .map(
+                        item => `
+                        <li><a href="${item.href}" ${this.activePage === item.id ? 'class="active"' : ''}>${item.label}</a></li>
+                    `,
+                      )
+                      .join('')}
+                </ul>`
+
     this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="symbols/font.css">
             <style>
@@ -212,6 +222,7 @@ class SiteHeader extends HTMLElement {
                     cursor: pointer;
                     z-index: 1001;
                     padding: 0;
+                    anchor-name: --menu-toggle;
                 }
 
                 .menu-toggle .material-symbols-rounded {
@@ -230,87 +241,269 @@ class SiteHeader extends HTMLElement {
                     -webkit-font-smoothing: antialiased;
                     color: white;
                     font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 48;
+                    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+
+                /* ===== Mobile popover nav ===== */
+                .mobile-nav {
+                    position-anchor: --menu-toggle;
+                    position: fixed;
+                    position-area: top;
+                    margin-bottom: 0.5rem;
+                    margin-right: 1.6rem;   
+                    padding: 1.6rem;
+                    background-color: #171d25;
+                    border-radius: 1.6rem;
+                    width: max-content;
+                    min-width: 22rem;
+                    z-index: 1000;
+                    overflow: hidden;
+                }
+
+                .mobile-nav[popover] {
+                    border: none;
+                    padding: 1.6rem;
+                    background-color: #171d25;
+                    overflow: visible;
+                }
+
+                .mobile-nav ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                }
+
+                .mobile-nav a {
+                    color: white;
+                    padding: 1.2rem 1.6rem;
+                    display: block;
+                    position: relative;
+                    border-radius: 0.8rem;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    user-select: none;
+                    transition: color 0.3s, background-color 0.3s;
+                }
+
+                .mobile-nav a:hover {
+                    color: var(--blue, #b3eaff);
+                    background-color: #ffffff10;
+                }
+
+                .mobile-nav a.active {
+                    color: var(--pink, #ffd9e6);
+                    background-color: #ffffff08;
+                }
+
+                .mobile-nav a::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%) scaleY(0);
+                    width: 3px;
+                    height: 60%;
+                    background: var(--pink, #ffd9e6);
+                    border-radius: 2px;
+                    transition: transform 0.3s ease;
+                }
+
+                .mobile-nav a.active::before {
+                    background: var(--pink, #ffd9e6);
+                    transform: translateY(-50%) scaleY(1);
+                }
+
+                .mobile-nav a:hover::before {
+                    background: var(--blue, #b3eaff);
+                    transform: translateY(-50%) scaleY(1);
+                }
+
+                /* ===== Popover animations ===== */
+                @keyframes popoverSlideUp {
+                    from {
+                        transform: translateY(2rem);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes popoverSlideDown {
+                    from {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    to {
+                        transform: translateY(2rem);
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes linkSlideIn {
+                    from {
+                        transform: translateX(-2rem);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes linkSlideOut {
+                    from {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                    to {
+                        transform: translateX(-2rem);
+                        opacity: 0;
+                    }
+                }
+
+                .mobile-nav.opening {
+                    animation: popoverSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+
+                .mobile-nav.opening li {
+                    opacity: 0;
+                    animation: linkSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+
+                .mobile-nav.closing {
+                    animation: popoverSlideDown 0.3s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+                }
+
+                .mobile-nav.closing li {
+                    animation: linkSlideOut 0.25s cubic-bezier(0.5, 0, 0.75, 0) forwards;
                 }
 
                 /* ===== Mobile responsive ===== */
-                @media (width <= 56.25em) {
+                @media (width <= 768px) {
                     :host([variant="default"]) header {
                         position: relative;
                     }
 
                     .nav {
-                        display: none;
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: auto;
-                        background-color: var(--header, #171d25);
-                        padding: 2rem;
-                        z-index: 1000;
-                    }
-
-                    .nav.open {
-                        display: block;
-                    }
-
-                    .nav ul {
-                        flex-direction: column;
-                        gap: 1rem;
-                    }
-
-                    .nav a {
-                        display: block;
-                        margin-left: 0;
-                        padding: 1rem 0;
+                        display: none!important;
                     }
 
                     .menu-toggle {
-                        display: block;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         position: fixed;
-                        bottom: 0.5rem;
-                        right: 0.5rem;
-                        font-size: 2rem;
-                        text-align: center;
-                        padding: 2rem;
+                        bottom: 1.6rem;
+                        right: 1.6rem;
+                        padding: 1.4rem;
                         border-radius: 100px;
-                        background-color: var(--card, #141520ed);
+                        background-color: #141520ed;
+                        backdrop-filter: blur(5px);
+                        border: 1px solid #ffffff15;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                                    background-color 0.2s;
+                    }
+
+                    .menu-toggle:hover {
+                        background-color: #1d1b20;
+                        transform: scale(1.05);
+                    }
+
+                    .menu-toggle:active {
+                        transform: scale(0.95);
+                    }
+
+                    .menu-toggle.is-open .material-symbols-rounded {
+                        transform: rotate(90deg);
                     }
                 }
             </style>
             <header>
                 <nav class="nav">
-                    <ul>
-                        ${navItems
-                          .map(
-                            item => `
-                            <li><a href="${item.href}" ${this.activePage === item.id ? 'class="active"' : ''}>${item.label}</a></li>
-                        `,
-                          )
-                          .join('')}
-                    </ul>
+                    ${menuList}
                 </nav>
                 <button class="menu-toggle" aria-label="菜单">
                     <span class="material-symbols-rounded">menu</span>
                 </button>
             </header>
+            <div class="mobile-nav" popover="manual">
+                ${menuList}
+            </div>
         `
   }
 
   setupInteractions() {
     const menuToggle = this.shadowRoot.querySelector('.menu-toggle')
-    const nav = this.shadowRoot.querySelector('.nav')
+    const mobileNav = this.shadowRoot.querySelector('.mobile-nav')
 
-    if (menuToggle && nav) {
-      menuToggle.addEventListener('click', () => {
-        this._navOpen = !this._navOpen
-        nav.classList.toggle('open', this._navOpen)
+    if (!menuToggle || !mobileNav) return
+
+    const links = mobileNav.querySelectorAll('li')
+
+    menuToggle.addEventListener('click', () => {
+      if (this._navOpen) {
+        this.closeNav(mobileNav, menuToggle, links)
+      } else {
+        this.openNav(mobileNav, menuToggle, links)
+      }
+    })
+
+    mobileNav.addEventListener('toggle', (e) => {
+      if (e.newState === 'closed') {
+        this._navOpen = false
+        mobileNav.classList.remove('opening', 'closing')
+        menuToggle.classList.remove('is-open')
         const icon = menuToggle.querySelector('.material-symbols-rounded')
-        if (icon) {
-          icon.textContent = this._navOpen ? 'close' : 'menu'
-        }
+        if (icon) icon.textContent = 'menu'
+      }
+    })
+  }
+
+  openNav(mobileNav, menuToggle, links) {
+    this._navOpen = true
+    const icon = menuToggle.querySelector('.material-symbols-rounded')
+    if (icon) icon.textContent = 'close'
+    menuToggle.classList.add('is-open')
+
+    mobileNav.classList.remove('closing')
+    mobileNav.showPopover()
+
+    requestAnimationFrame(() => {
+      mobileNav.classList.add('opening')
+      links.forEach((li, i) => {
+        li.style.animationDelay = `${0.06 + i * 0.07}s`
       })
+    })
+
+    const onEnd = () => {
+      mobileNav.classList.remove('opening')
+      mobileNav.removeEventListener('animationend', onEnd)
     }
+    mobileNav.addEventListener('animationend', onEnd)
+  }
+
+  closeNav(mobileNav, menuToggle, links) {
+    const icon = menuToggle.querySelector('.material-symbols-rounded')
+    if (icon) icon.textContent = 'menu'
+    menuToggle.classList.remove('is-open')
+
+    mobileNav.classList.remove('opening')
+    mobileNav.classList.add('closing')
+
+    links.forEach((li, i) => {
+      li.style.animationDelay = `${i * 0.04}s`
+    })
+
+    const onEnd = () => {
+      mobileNav.classList.remove('closing')
+      mobileNav.hidePopover()
+      this._navOpen = false
+      mobileNav.removeEventListener('animationend', onEnd)
+    }
+    mobileNav.addEventListener('animationend', onEnd)
   }
 }
 

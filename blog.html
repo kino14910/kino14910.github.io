@@ -10,6 +10,7 @@
     <script defer src="scripts/site-header.js"></script>
     <script defer src="scripts/blog/comment.js"></script>
     <script defer src="scripts/blog/interaction-bar.js"></script>
+    <script defer src="scripts/blog/post.js"></script>
     <title>博客</title>
 </head>
 
@@ -17,152 +18,91 @@
     <site-header active="blog" variant="default"></site-header>
     <div class="container">
         <main>
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Elysia.png" alt="粉色妖精小姐♪的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">粉色妖精小姐♪</div>
-                <time class="date">2023-3-30</time>
-                <div class="post-content">
-                    <p>
-                        哎呀~今天我也这么好看~
-                    </p>
-                </div>
-                <div class="comment">
-                    <blog-comment commenter="Mobius">又在发这种东西了</blog-comment>
-                    <blog-comment commenter="伊甸-offical">爱莉什么时候都很好看</blog-comment>
-                </div>
-                <interaction-bar />
-            </article>
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Griseo.png" alt="格蕾修的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">格蕾修</div>
-                <time class="date">2023-2-14</time>
-                <div class="post-content">
-                    <p>
-                        科斯魔今天不在
-                    </p>
-                </div>
-                <div class="comment">
-                    <blog-comment commenter="粉色妖精小姐♪">哎呀~科斯魔好狠心呢~怎么舍得让小格蕾修一个人呢</blog-comment>
-                    <blog-comment commenter="科斯魔">算了...</blog-comment>
-                </div>
-                <interaction-bar />
-            </article>
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Kevin.png" alt="逐火之蛾-凯文的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">逐火之蛾-凯文</div>
-                <time class="date">2023-1-28</time>
-                <div class="post-content">
-                    <p>
-                        第四次崩坏区域崩坏能已恢复正常，各位辛苦了，今晚团建。
-                    </p>
-                </div>
-                <div class="comment">
-                    <blog-comment commenter="粉色妖精小姐♪">要是没有崩坏该多好呀~</blog-comment>
-                    <blog-comment commenter="逐火之蛾-凯文" mention="粉色妖精小姐♪">逐火之蛾正是因此而存在</blog-comment>
-                    <blog-comment commenter="喵喵喵">凯文老大，不会又是吃泡面吧？</blog-comment>
-                    <blog-comment commenter="逐火之蛾-凯文" mention="喵喵喵">可以加一条鱼干</blog-comment>
-                    <blog-comment commenter="喵喵喵" mention="逐火之蛾-凯文">谢谢凯文老大！！！凯文老大最好了！</blog-comment>
-                    <blog-comment commenter="mei">注意休息</blog-comment>
-                    <blog-comment commenter="逐火之蛾-凯文" mention="mei">好的</blog-comment>
-                </div>
-                <interaction-bar />
-            </article>
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Eden.png" alt="伊甸-offical的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">伊甸-offical</div>
-                <time class="date">2022-12-25</time>
-                <div class="post-content">
-                    <p>
-                        今天的演唱会现场人也很多，但果然还是比之前少了
-                    </p>
-                </div>
-                <div class="comment">
-                    <blog-comment commenter="粉色妖精小姐♪">加油呀！我的好伊甸~</blog-comment>
-                    <blog-comment commenter="苏">太难抢了，花了三倍价格才抢到票</blog-comment>
-                    <blog-comment commenter="凯文" mention="苏">看来梅比乌斯的脚本没有梅的快</blog-comment>
-                    <blog-comment commenter="Mobius" mention="凯文">不用就闭嘴</blog-comment>
-                </div>
-                <interaction-bar />
-            </article>
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Mobius.png" alt="Mobius的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">Mobius</div>
-                <time class="date">2022-9-26</time>
-                <div class="post-content">
-                    <p>
-                        哎呀~实验成功了~
-                    </p>
-                </div>
-                <div class="comment">
-                    <blog-comment commenter="粉色妖精小姐♪">恭喜我们的梅比乌斯博士实验成功~</blog-comment>
-                    <blog-comment commenter="Mobius" mention="粉色妖精小姐♪">爱莉希雅！你是不是又在我衣柜里面放了你的衣服！</blog-comment>
-                    <blog-comment commenter="粉色妖精小姐♪" mention="Mobius">穿一次好不好嘛~那可是人家的心意呀~</blog-comment>
-                    <blog-comment commenter="Mei">所以最后还是根据我的推论进行修正的吗？</blog-comment>
-                </div>
-                <interaction-bar />
-            </article>
+            <blog-post avatar="images/Elysia.png" avatar-alt="粉色妖精小姐♪的头像" nickname="粉色妖精小姐♪"
+                date="2023-3-30">
+                <p slot="content">哎呀~今天我也这么好看~</p>
+                <blog-comment slot="comments" commenter="Mobius">又在发这种东西了</blog-comment>
+                <blog-comment slot="comments" commenter="伊甸-offical">爱莉什么时候都很好看</blog-comment>
+            </blog-post>
 
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Elysia.png" alt="粉色妖精小姐♪的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">粉色妖精小姐♪</div>
-                <time class="date">2022-08-18</time>
-                <div class="post-content">
-                    <p>
-                        专辑出来啦~♪
-                    </p>
-                    <iframe frameborder="no" marginwidth="0" marginheight="0" width=100% height=86
-                        src="//music.163.com/outchain/player?type=2&id=1973314938&auto=0&height=66"></iframe>
-                </div>
-                <div class="comment"></div>
-                <interaction-bar />
-            </article>
+            <blog-post avatar="images/Griseo.png" avatar-alt="格蕾修的头像" nickname="格蕾修" date="2023-2-14">
+                <p slot="content">科斯魔今天不在</p>
+                <blog-comment slot="comments"
+                    commenter="粉色妖精小姐♪">哎呀~科斯魔好狠心呢~怎么舍得让小格蕾修一个人呢</blog-comment>
+                <blog-comment slot="comments" commenter="科斯魔">算了...</blog-comment>
+            </blog-post>
 
-            <article class="grid-center">
-                <div class="avatar">
-                    <img src="images/Elysia.png" alt="粉色妖精小姐♪的头像" width="64" height="64" loading="lazy">
-                </div>
-                <div class="nickname">粉色妖精小姐♪</div>
-                <time class="date">2021-09-16</time>
-                <div class="post-content">
-                    <p>
-                        是新歌哦~ 看来我也有一些唱歌的天赋呢，你说对不对？我的好伊甸？
-                    </p>
-                    <iframe src="//player.bilibili.com/player.html?aid=547989472&bvid=BV1dq4y1N7ry&cid=427292435&page=1"
-                        scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"
-                        height="400">
-                    </iframe>
-                </div>
-                <div class="comment">
-                    <blog-comment commenter="伊甸">不错，我的好爱莉。</blog-comment>
-                    <blog-comment commenter="Mobius">也不过如此，果然还是想听千劫唱歌</blog-comment>
-                    <blog-comment commenter="你劫哥" mention="Mobius">梅比乌斯！你还想再死一次！</blog-comment>
-                    <blog-comment commenter="阿波尼亚" mention="你劫哥">请 好好说话</blog-comment>
-                    <blog-comment commenter="喵喵喵">爱莉姐太厉害了！！！</blog-comment>
-                    <blog-comment commenter="科斯魔">帅</blog-comment>
-                    <blog-comment commenter="逐火之蛾-凯文">好听</blog-comment>
-                    <blog-comment commenter="格蕾修">爱莉希雅姐姐的歌，好听</blog-comment>
-                    <blog-comment commenter="华">清耳悦心</blog-comment>
-                    <blog-comment commenter="世界第一魔术师">就让这首歌作为最伟大魔术师的伴奏吧！</blog-comment>
-                    <blog-comment commenter="樱">是很好听的歌，很有个人特色</blog-comment>
-                    <blog-comment commenter="粉色妖精小姐♪" mention="樱">哎呀！樱原来也很喜欢这样的风格吗~</blog-comment>
-                    <blog-comment commenter="樱" mention="粉色妖精小姐♪">嗯？</blog-comment>
-                    <blog-comment commenter="苏">如同花间的精灵在耳边呢喃，清净了许久，偶尔这样也不错。</blog-comment>
-                    <blog-comment commenter="你劫哥" mention="阿波尼亚">********************</blog-comment>
-                </div>
-                <interaction-bar />
-            </article>
+            <blog-post avatar="images/Kevin.png" avatar-alt="逐火之蛾-凯文的头像" nickname="逐火之蛾-凯文"
+                date="2023-1-28">
+                <p slot="content">第四次崩坏区域崩坏能已恢复正常，各位辛苦了，今晚团建。</p>
+                <blog-comment slot="comments" commenter="粉色妖精小姐♪">要是没有崩坏该多好呀~</blog-comment>
+                <blog-comment slot="comments" commenter="逐火之蛾-凯文"
+                    mention="粉色妖精小姐♪">逐火之蛾正是因此而存在</blog-comment>
+                <blog-comment slot="comments" commenter="喵喵喵">凯文老大，不会又是吃泡面吧？</blog-comment>
+                <blog-comment slot="comments" commenter="逐火之蛾-凯文"
+                    mention="喵喵喵">可以加一条鱼干</blog-comment>
+                <blog-comment slot="comments" commenter="喵喵喵"
+                    mention="逐火之蛾-凯文">谢谢凯文老大！！！凯文老大最好了！</blog-comment>
+                <blog-comment slot="comments" commenter="mei">注意休息</blog-comment>
+                <blog-comment slot="comments" commenter="逐火之蛾-凯文" mention="mei">好的</blog-comment>
+            </blog-post>
+
+            <blog-post avatar="images/Eden.png" avatar-alt="伊甸-offical的头像" nickname="伊甸-offical"
+                date="2022-12-25">
+                <p slot="content">今天的演唱会现场人也很多，但果然还是比之前少了</p>
+                <blog-comment slot="comments" commenter="粉色妖精小姐♪">加油呀！我的好伊甸~</blog-comment>
+                <blog-comment slot="comments" commenter="苏">太难抢了，花了三倍价格才抢到票</blog-comment>
+                <blog-comment slot="comments" commenter="凯文" mention="苏">看来梅比乌斯的脚本没有梅的快</blog-comment>
+                <blog-comment slot="comments" commenter="Mobius" mention="凯文">不用就闭嘴</blog-comment>
+            </blog-post>
+
+            <blog-post avatar="images/Mobius.png" avatar-alt="Mobius的头像" nickname="Mobius" date="2022-9-26">
+                <p slot="content">哎呀~实验成功了~</p>
+                <blog-comment slot="comments"
+                    commenter="粉色妖精小姐♪">恭喜我们的梅比乌斯博士实验成功~</blog-comment>
+                <blog-comment slot="comments" commenter="Mobius"
+                    mention="粉色妖精小姐♪">爱莉希雅！你是不是又在我衣柜里面放了你的衣服！</blog-comment>
+                <blog-comment slot="comments" commenter="粉色妖精小姐♪"
+                    mention="Mobius">穿一次好不好嘛~那可是人家的心意呀~</blog-comment>
+                <blog-comment slot="comments"
+                    commenter="Mei">所以最后还是根据我的推论进行修正的吗？</blog-comment>
+            </blog-post>
+
+            <blog-post avatar="images/Elysia.png" avatar-alt="粉色妖精小姐♪的头像" nickname="粉色妖精小姐♪"
+                date="2022-08-18">
+                <p slot="content">专辑出来啦~♪</p>
+                <iframe slot="content" frameborder="no" marginwidth="0" marginheight="0" width="100%" height="86"
+                    src="//music.163.com/outchain/player?type=2&id=1973314938&auto=0&height=66"></iframe>
+            </blog-post>
+            
+            <blog-post avatar="images/Elysia.png" avatar-alt="粉色妖精小姐♪的头像" nickname="粉色妖精小姐♪"
+                date="2021-09-16">
+                <p slot="content">是新歌哦~ 看来我也有一些唱歌的天赋呢，你说对不对？我的好伊甸？</p>
+                <iframe slot="content"
+                    src="//player.bilibili.com/player.html?aid=547989472&bvid=BV1dq4y1N7ry&cid=427292435&page=1"
+                    scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"
+                    height="400"></iframe>
+                <blog-comment slot="comments" commenter="伊甸">不错，我的好爱莉。</blog-comment>
+                <blog-comment slot="comments" commenter="Mobius">也不过如此，果然还是想听千劫唱歌</blog-comment>
+                <blog-comment slot="comments" commenter="你劫哥"
+                    mention="Mobius">梅比乌斯！你还想再死一次！</blog-comment>
+                <blog-comment slot="comments" commenter="阿波尼亚" mention="你劫哥">请 好好说话</blog-comment>
+                <blog-comment slot="comments" commenter="你劫哥" mention="阿波尼亚">********************</blog-comment>
+                <blog-comment slot="comments" commenter="喵喵喵">爱莉姐太厉害了！！！</blog-comment>
+                <blog-comment slot="comments" commenter="科斯魔">帅</blog-comment>
+                <blog-comment slot="comments" commenter="逐火之蛾-凯文">好听</blog-comment>
+                <blog-comment slot="comments" commenter="格蕾修">爱莉希雅姐姐的歌，好听</blog-comment>
+                <blog-comment slot="comments" commenter="华">清耳悦心</blog-comment>
+                <blog-comment slot="comments"
+                    commenter="世界第一魔术师">就让这首歌作为最伟大魔术师的伴奏吧！</blog-comment>
+                <blog-comment slot="comments" commenter="樱">是很好听的歌，很有个人特色</blog-comment>
+                <blog-comment slot="comments" commenter="粉色妖精小姐♪"
+                    mention="樱">哎呀！樱原来也很喜欢这样的风格吗~</blog-comment>
+                <blog-comment slot="comments" commenter="樱"
+                    mention="粉色妖精小姐♪">嗯？</blog-comment>
+                <blog-comment slot="comments"
+                    commenter="苏">如同花间的精灵在耳边呢喃，清净了许久，偶尔这样也不错。</blog-comment>
+            </blog-post>
         </main>
     </div>
 

@@ -6,25 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kino的网站</title>
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <script defer src="scripts/site-header.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 </head>
 
 <body>
-    <header class="index-header">
-        <nav class="index-nav">
-            <ul>
-                <li><a href="index.html" class="active">首页</a></li>
-                <li><a href="blog.html">博客</a></li>
-                <li><a href="server.html">服务器</a></li>
-                <li><a href="note.html">笔记</a></li>
-                <li><a href="login.html">登录</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="菜单">
-            <span class="material-symbols-rounded">menu</span>
-        </button>
-    </header>
+    <site-header active="index" variant="index"></site-header>
     <div class="container">
         <main>
             <div class="main-content center fade-in-entry">
@@ -33,20 +21,6 @@
             </div>
         </main>
     </div>
-    <script>
-        (function () {
-            var menuToggle = document.querySelector('.menu-toggle');
-            var nav = document.querySelector('.index-nav');
-            var icon = menuToggle.querySelector('.material-symbols-rounded');
-            var navOpen = false;
-
-            menuToggle.addEventListener('click', function () {
-                navOpen = !navOpen;
-                nav.classList.toggle('open', navOpen);
-                icon.textContent = navOpen ? 'close' : 'menu';
-            });
-        })();
-    </script>
 </body>
 
 </html>

@@ -228,7 +228,7 @@
 
 @media (width <= 56.25em) {
     .login-surface {
-        min-height: auto;
+        min-height: 100svh;
         padding: 2rem;
     }
 
@@ -271,11 +271,5 @@
 
     .login-form-area {
         padding: 2.4rem 1.6rem;
-    }
-
-    .login-actions {
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: center;
     }
 }

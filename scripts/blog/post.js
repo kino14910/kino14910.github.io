@@ -38,14 +38,13 @@ class BlogPost extends HTMLElement {
     this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    display: block;
-                    margin: 2vw;
+                    display: grid!important;
+                    margin: 2vw!important;
                     background-color: #141520ed;
                     border-radius: 2rem;
                     border: #333 3px double;
                     backdrop-filter: blur(5px);
-                    padding: 1.5vw;
-                    display: grid;
+                    padding: 1.5vmax!important;
                     grid-template:
                         "head name" 2vmax
                         "head time" 2vmax
@@ -94,7 +93,7 @@ class BlogPost extends HTMLElement {
                 }
 
                 .post-content {
-                    padding: 1vmin;
+                    padding: 1vh 8px;
                     grid-area: post-content;
                 }
 
