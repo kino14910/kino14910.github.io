@@ -11,8 +11,7 @@ class InteractionBar extends HTMLElement {
     render () {
         this.shadowRoot.innerHTML = `
             <style>
-                @import url(../symbols/outlined/index.css);
-                @import url(../symbols/font.css);
+                                @import url(../symbols/font.css);
                 .interaction-bar {
                     display: flex;
                     justify-content: end;

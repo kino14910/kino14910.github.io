@@ -1,9 +1,7 @@
 /* 导入字体图标 */
-@import url(../symbols/outlined/index.css);
 @import url(../symbols/font.css);
 /*导入全局样式*/
 @import url(global.css);
-@import url(common.css);
 
 /*中间大导航栏*/
 nav {
